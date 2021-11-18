@@ -1,4 +1,3 @@
-# Integral-B-A01351725
 # Búsqueda optimizada de localizaciones satelitales por medio de grafos
 
 
