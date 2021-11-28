@@ -1,5 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
+#include "quadratic.h"
+#include <string>
+#include <stdio.h>
+#include <sstream>
+#include <fstream>
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <stack>
+#include <list>
+#include <algorithm>
 
 void add_edge(vector<int> adj[], int src, int dest)
 {
@@ -45,16 +56,16 @@ bool BFS(vector<int> adj[], int src, int dest, int v,
     return false;
 }
  
-void printShortestDistance(vector<int> adj[], int s,
+vector<int> printShortestDistance(vector<int> adj[], int s,
                            int dest, int v)
 {
-
+    vector<int> vectorids;
     int pred[v], dist[v];
  
     if (BFS(adj, s, dest, v, pred, dist) == false) {
         cout << "Given source and destination"
              << " are not connected";
-        return;
+        
     }
 
     vector<int> path;
@@ -67,25 +78,44 @@ void printShortestDistance(vector<int> adj[], int s,
  
 
     cout << "\nEl camino más corto paso a paso es:\n";
-    for (int i = path.size() - 1; i >= 0; i--)
-        cout << path[i] << " ";
+    for (int i = path.size() - 1; i >= 0; i--){
+        vectorids.push_back(path[i]);}
+        
+    return vectorids;
 }
  
+unsigned int myHash(const string s) {
+	unsigned int acum = 0;
+	for (unsigned int i = 0; i < s.size(); i++) {
+		acum += (int) s[i];
+	}
+	return acum;
+}
 
 int main()
 {
-
+    Quadratic <string, int> quad_hash(10, string("empty"), myHash);
+    vector<string> ciudades;
+    vector<int> vectorid;
     cout<<"TEC Waze"<<endl;
     cout<<"Encuentra la ruta más cercana entre localizaciones."<<endl;
     cout<<endl<<"Id de ciudad: "<<endl;
-    cout<<"0. Cuernavaca"<<endl;
-    cout<<"1. Ciudad de México"<<endl;
-    cout<<"2. Puebla"<<endl;
-    cout<<"3. Toluca"<<endl;
-    cout<<"4. Querétaro"<<endl;
-    cout<<"6. Morelia"<<endl;
-    cout<<"7. Irapuato"<<endl;
+    ciudades.push_back("Cuernavaca");
+    ciudades.push_back("Ciudad de México");
+    ciudades.push_back("Puebla");
+    ciudades.push_back("Toluca");
+    ciudades.push_back("Querétaro");
+    ciudades.push_back("Uruapan");
+    ciudades.push_back("Morelia");
+    ciudades.push_back("Irapuato");
+    int i=0;
     
+    while(i<8){
+    quad_hash.put(string(ciudades[i]), i);
+    i++;
+    }
+    cout<<quad_hash.toString().c_str();
+
     int v = 8;
 
     vector<int> adj[v];
@@ -106,7 +136,24 @@ int main()
     cin>>inicio;
     cout<<"¿Cuál es id de la la ciudad de destino?: "<<endl;
     cin>>dest;
- 
-    printShortestDistance(adj, inicio, dest, v);
+    int ii=0;
+    vectorid=printShortestDistance(adj, inicio, dest, v);
+    while(ii<vectorid.size()){
+      i=0;
+      while(i<8){
+        if(quad_hash.get(ciudades[i])==vectorid[ii]){
+          cout<<ciudades[i];
+        }
+        i++;
+      }
+
+      ii++;
+      if(ii<vectorid.size()){
+        cout<<"->";
+      }
+    }
+    cout<<endl<<endl;
+    cout<<"------------------------------------------------"<<endl;
+    main();
     return 0;
 }
