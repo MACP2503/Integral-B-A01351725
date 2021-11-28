@@ -8,6 +8,8 @@ Vivimos en pleno Siglo XXI y las necesidades están en constante cambio. A pesar
 Se utiliza una estructura de grafos para representar la conexión entre distintas ciudades del país. Esto es perfectamente palpable puesto a que la multiconectividad de los grafos permite identificar las diferentes carreteras que conectan las localidades y así permitir la búsqueda del camino más corto para llegar entre ellas.
 ### Usa un algoritmo de búsqueda en grafos adecuado para resolver un problema
 Se realizó un recorrido entre los puntos que se tocan en los grafos. Dado a que se requiere buscar un trayecto que involucre la menor cantidad de tiempo posible, trazar todos los caminos posibles hasta encontrar el más conveniente para llegar al destino es un algoritmo bastante adecuado para el servicio que ofrece este sistema.
+### Usa un algoritmo de hashing adecauado para resolver un problema
+Se realizó un cambio que modificó enteramente el funcionamiento del main. Se incluyó el algoritmo de hashing utilizado en la última actividad manejando ciertas modificaciones para poder manejar los ids directamente dentro del hash, poder almacenarlos en conjunto con el nombre de la ciudad y así finalmente imprimir el recorrido de las ciudades con el nombre de las mismas y no con sus respectivos números como se realizaba en la entrega anterior. Esta mejora es sustancial para el entendimiento del usuario y utiliza una mezcla entre funciones y retorno de vectores y la función Get y el print del hash para obtener los resultados.
 
 ## SICT0301B: Evalúa los componentes
 
