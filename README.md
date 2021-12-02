@@ -36,8 +36,11 @@ El método de búsqueda del grafo consiste en un O(V+E) por su bipolaridad de b�
 La ejecución de un pancake equivale a un O(n*n), algo que ya se explicó en la documentación superior. La posterior impresión de las líneas es una constante porque los valores del arreglo ya se encuentran definidos. Ergo, sigue siendo O(n*n).
 #### Eliminar historial de búsqueda de rutas. 
 Un O(1) que ejecuta un par de funciones para dejar en blanco el historial.txt con su respectivo título.
+### Describe cada algoritmo de la estructura (inserción, consulta, etc...) de forma clara y con ejemplos
+A pesar de tener la explicación ya realizada en puntos anteriores, se muestra a continuación la explicación de los algoritmos:
+#### Inserciones
+La inserción principal coloca los valores de ciudades.txt dentro de la estructura heap por medio del getline. Si se tienen las ciudades en fila, cada una se posiciona en la estructura según el valor de la iteración e. Si Ciudad de México es la primera y 
 ## SICT0303B: Implementa acciones científicas 
-
 ### Implementa mecanismos para consultar información de las estructuras correctos y útiles dentro de un programa.
 Desde el momento que se hace un menú principal con recursión que permite elegir 4 funciones que se guardan en archivos de texto, se implementan mecanismos propios para el usuario que no sólo son impresiones. Desde ordenamientos con sortings nuevos y contrastes entre grafos y heaps hasta lectura y escritura de documentos, el programa implementa consultoría y escritura de información movilizadas en diversos ámbitos de las estructuras de datos.
 ### Implementa mecanismos de lectura de archivos correctos y útiles dentro de un programa. Usar de manera
