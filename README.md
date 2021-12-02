@@ -24,17 +24,24 @@ Utiliza un pancake sort con equivalencias létricas para ordenar e imprimir las 
 #### Eliminar historial de búsqueda de rutas. 
 Utiliza un algoritmo de escritura para eliminar todo texto, fuera del título, que se encuentre dentro de historial.txt para suprimirlo y quitar rastro de toda búsqueda realizada en tiempos anteriores. Se otorga el historial.txt con información y perfectamente modificable para asegurarse del constante funcionamiento de la función.
 ### Hace un análisis de complejidad correcto y completo para todo el programa y sus componentes
-
-
+#### Inicio del proyecto.
+Se realizó una lectura de archivo que se encargase de la inserción de valores en un hash que será el encargado de guardar tanto ciudad como ID y en el grafo de búsqueda de caminos. Dado a que este depende del archivo y su tamaño, la cantidad de instrucciones a realizar se convierte en un O(n) en el peor de los casos, siendo O(1) casi una constante por la cantidad ya definida de ciudades.
+#### Comprobación de errores.
+Un if define la comprobación que mata todo el programa si no se cumple, un O(1) constante para esta función.
+#### Despliega lista completa de ciudades.
+La impresión de los valores del hash debería ser un O(n) por la dependencia de la cantidad de valores del mismo, sin embargo, pasa como en la función anterior puesto a que el 8 es una constante en este programa, haciéndolo O(1) casi por completo. 
+#### Encontrar ruta más cercana entre dos ciudades por id.
+El método de búsqueda del grafo consiste en un O(V+E) por su bipolaridad de búsqueda conectable por medio de valores y vértices. Este generó un contraste junto con el while de posicionamiento usando como herramienta el hash para hacer tanto una búsqueda de caminos cortos como un análisis de equivalencias entre números y nombres de ciudad. Esto lo hace un 0(N(V+E)) para el peor de los casos. 
+#### Ver lista de líneas de autobuses disponibles para servicio.
+La ejecución de un pancake equivale a un O(n*n), algo que ya se explicó en la documentación superior. La posterior impresión de las líneas es una constante porque los valores del arreglo ya se encuentran definidos. Ergo, sigue siendo O(n*n).
+#### Eliminar historial de búsqueda de rutas. 
+Un O(1) que ejecuta un par de funciones para dejar en blanco el historial.txt con su respectivo título.
 ## SICT0303B: Implementa acciones científicas 
 
 ### Implementa mecanismos para consultar información de las estructuras correctos y útiles dentro de un programa.
-
-
+Desde el momento que se hace un menú principal con recursión que permite elegir 4 funciones que se guardan en archivos de texto, se implementan mecanismos propios para el usuario que no sólo son impresiones. Desde ordenamientos con sortings nuevos y contrastes entre grafos y heaps hasta lectura y escritura de documentos, el programa implementa consultoría y escritura de información movilizadas en diversos ámbitos de las estructuras de datos.
 ### Implementa mecanismos de lectura de archivos correctos y útiles dentro de un programa. Usar de manera
-
-
-
+La lectura proviene del archivo ciudades.txt que da nombre a las ciudades de la plataforma.
 ### Implementa mecanismos de escritura de archivos correctos y útiles dentro de un programa. Usar de manera
-
+La escritura se encuentra en el historial con extensión txt, puesto a que es modificable a conveniencia del usuario por medio de las opciones 2 y 4.
 
