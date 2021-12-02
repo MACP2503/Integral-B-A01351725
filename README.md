@@ -14,7 +14,9 @@ El algoritmno implementado fue el pancake sort, tipo de sort interesante ya que 
 ## SICT0301B: Evalúa los componentes
 
 ### Presenta Casos de Prueba correctos y completos para todas las funciones y procedimientos del programa,
-
+El programa maneja una variedad de 4 funciones que serán explicadas a continuación:
+#### Despliega lista completa de ciudades.
+Utiliza la impresión del hash para desplegar las ciudades y sus respectivos ids obtenidos de el archivo "Ciudades.txt". Como caso de prueba, se le atribuye una lista de 8 ciudades en formato de texto que pueden ser perfectamente modificables al gusto de la persona. Si se coloca una menor o mayor cantidad de ciudades, arrojará un error que evitará que prosiga la plataforma. 
 ### Hace un análisis de complejidad correcto y completo para todo el programa y sus componentes
 
 
