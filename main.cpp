@@ -165,7 +165,7 @@ int main()
     add_edge(adj, 6, 7);
 
     int decision=0;
-    
+    if(ciudades.size()==8){
     cout<<"¿Qué desea hacer hoy?: "<<endl;
     cout<<"1. Despliega lista completa de ciudades."<<endl;
     cout<<"2. Encontrar ruta más cercana entre dos ciudades por id."<<endl;
@@ -271,6 +271,9 @@ int main()
     cout<<"Historial correctamente eliminado." <<endl; 
     }
     cout<<"------------------------------------------------"<<endl;
-    main();
+    main();}
+    else{
+      cout<<"El archivo de ciudades fue modificado erróneamente. Coloque 8 ciudades con un Enter entre cada una para utilizar el programa."<<endl;
+    }
     return 0;
 }
