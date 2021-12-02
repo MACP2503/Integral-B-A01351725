@@ -14,7 +14,7 @@ El algoritmno implementado fue el pancake sort, tipo de sort interesante ya que 
 ## SICT0301B: Evalúa los componentes
 
 ### Presenta Casos de Prueba correctos y completos para todas las funciones y procedimientos del programa,
-El programa maneja una variedad de 4 funciones que serán explicadas a continuación:
+El programa maneja una variedad de 4 funciones con sus respectivos casos de prueba que serán explicadas a continuación:
 #### Despliega lista completa de ciudades.
 El hash almacena por medio de lectura de archivos el nombre de una variedad de ciudades. Esta función utiliza la impresión del hash para desplegar las ciudades y sus respectivos ids obtenidos de el archivo "Ciudades.txt". Como caso de prueba, se le atribuye una lista de 8 ciudades en formato de texto que pueden ser perfectamente modificables al gusto de la persona. Si se coloca una menor o mayor cantidad de ciudades, arrojará un error que evitará que prosiga la plataforma.
 #### Encontrar ruta más cercana entre dos ciudades por id.
@@ -39,7 +39,12 @@ Un O(1) que ejecuta un par de funciones para dejar en blanco el historial.txt co
 ### Describe cada algoritmo de la estructura (inserción, consulta, etc...) de forma clara y con ejemplos
 A pesar de tener la explicación ya realizada en puntos anteriores, se muestra a continuación la explicación de los algoritmos:
 #### Inserciones
-La inserción principal coloca los valores de ciudades.txt dentro de la estructura heap por medio del getline. Si se tienen las ciudades en fila, cada una se posiciona en la estructura según el valor de la iteración e. Si Ciudad de México es la primera y 
+La inserción principal coloca los valores de ciudades.txt dentro de la estructura heap por medio del getline. Si se tienen las ciudades en fila, cada una se posiciona en la estructura según el valor de la iteración e. Si Ciudad de México es la primera y Puebla la segunda se colocan en ciudades[0] con id 0 y ciudades[1] con id 1 respectivamente. Esta misma actividad se efectúa en el grafo, que toma el id y la ciudad del heap para hacer futuras operaciones.
+#### Ordenamiento
+Se generaron los flips del pancake sort que ya fue previamente explicado, encontrando un posicionamiento del menor al mayor en poco tiempo. Su funcionamiento es fácilmente observable con un plato, se inserta la espátula como en la imagen para cada vez obtener volteos más uniformes en la escala de tamaños. ![image](https://user-images.githubusercontent.com/74038341/144356205-8f90685c-419a-4503-bc18-e155306fc2c7.png)
+#### Borrado
+#### Lectura
+
 ## SICT0303B: Implementa acciones científicas 
 ### Implementa mecanismos para consultar información de las estructuras correctos y útiles dentro de un programa.
 Desde el momento que se hace un menú principal con recursión que permite elegir 4 funciones que se guardan en archivos de texto, se implementan mecanismos propios para el usuario que no sólo son impresiones. Desde ordenamientos con sortings nuevos y contrastes entre grafos y heaps hasta lectura y escritura de documentos, el programa implementa consultoría y escritura de información movilizadas en diversos ámbitos de las estructuras de datos.
