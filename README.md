@@ -19,8 +19,10 @@ El programa maneja una variedad de 4 funciones que serán explicadas a continuac
 El hash almacena por medio de lectura de archivos el nombre de una variedad de ciudades. Esta función utiliza la impresión del hash para desplegar las ciudades y sus respectivos ids obtenidos de el archivo "Ciudades.txt". Como caso de prueba, se le atribuye una lista de 8 ciudades en formato de texto que pueden ser perfectamente modificables al gusto de la persona. Si se coloca una menor o mayor cantidad de ciudades, arrojará un error que evitará que prosiga la plataforma.
 #### Encontrar ruta más cercana entre dos ciudades por id.
 Solicita al usuario dos ids válidos de ciudades (si no marca error) para proceder a hacer una búsqueda de la menor distancia posible entre dos puntos del hash. Posteriormente, se hace una impresión de los valores transcritos de Id a su equivalente de ciudad para finalizar añadiendo la búsqueda al historial. El caso de prueba incluye el archivo historial.txt con ejemplos de impresiones acordes al funcionamiento de la función que no serán sobreescritas cada que se corra el programa. La cantidad de estas puede ser infinita y proseguirá funcionando.
-##### Encontrar ruta más cercana entre dos ciudades por id.
-
+#### Ver lista de líneas de autobuses disponibles para servicio.
+Utiliza un pancake sort con equivalencias létricas para ordenar e imprimir las líneas de autobuses disponibles para la movilidad entre las ciudades del txt. Es una función automática que apoya al usuario para observar la información requerida de los medios de transporte adecuados y oficiales para su conveniencia.
+#### Eliminar historial de búsqueda de rutas. 
+Utiliza un algoritmo de escritura para eliminar todo texto, fuera del título, que se encuentre dentro de historial.txt para suprimirlo y quitar rastro de toda búsqueda realizada en tiempos anteriores. Se otorga el historial.txt con información y perfectamente modificable para asegurarse del constante funcionamiento de la función.
 ### Hace un análisis de complejidad correcto y completo para todo el programa y sus componentes
 
 
