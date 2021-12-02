@@ -42,10 +42,12 @@ A pesar de tener la explicación ya realizada en puntos anteriores, se muestra a
 La inserción principal coloca los valores de ciudades.txt dentro de la estructura heap por medio del getline. Si se tienen las ciudades en fila, cada una se posiciona en la estructura según el valor de la iteración e. Si Ciudad de México es la primera y Puebla la segunda se colocan en ciudades[0] con id 0 y ciudades[1] con id 1 respectivamente. Esta misma actividad se efectúa en el grafo, que toma el id y la ciudad del heap para hacer futuras operaciones.
 #### Ordenamiento
 Se generaron los flips del pancake sort que ya fue previamente explicado, encontrando un posicionamiento del menor al mayor en poco tiempo. Su funcionamiento es fácilmente observable con un plato, se inserta la espátula como en la imagen para cada vez obtener volteos más uniformes en la escala de tamaños. 
+
 ![image](https://user-images.githubusercontent.com/74038341/144356205-8f90685c-419a-4503-bc18-e155306fc2c7.png)
 #### Borrado
+El historial posee una función de borrado que usa ofstream el cuál representa la escritura de archivos y su comando trunc para borrar absolutamente todo lo que contiene el txt y posteriormente reescribir el título. Esto puede borrar miles y miles de líneas de historial.
 #### Lectura
-
+La lectura de archivos funciona de forma sencilla. Son 8 ciudades divididas por líneas que utilizan getline para realizar lo explicado en inserción. Dado a que el getline del while detecta el fin del archivo, esto se realizará la cantidad de ocasiones que sean necesarias hasta que se completen las ciudades, haciendo una lectura e inserción un total de 8 ocasiones.
 ## SICT0303B: Implementa acciones científicas 
 ### Implementa mecanismos para consultar información de las estructuras correctos y útiles dentro de un programa.
 Desde el momento que se hace un menú principal con recursión que permite elegir 4 funciones que se guardan en archivos de texto, se implementan mecanismos propios para el usuario que no sólo son impresiones. Desde ordenamientos con sortings nuevos y contrastes entre grafos y heaps hasta lectura y escritura de documentos, el programa implementa consultoría y escritura de información movilizadas en diversos ámbitos de las estructuras de datos.
