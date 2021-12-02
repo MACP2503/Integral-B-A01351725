@@ -11,6 +11,8 @@ using namespace std;
 #include <stack>
 #include <list>
 #include <algorithm>
+#include "sorts.h"
+#define NOMBRE_CIU "Ciudades.txt"
 
 void add_edge(vector<int> adj[], int src, int dest)
 {
@@ -91,31 +93,61 @@ unsigned int myHash(const string s) {
 	}
 	return acum;
 }
+void flip(int arr[], int i)
+{
+    int temp, start = 0;
+    while (start < i)
+    {
+        temp = arr[start];
+        arr[start] = arr[i];
+        arr[i] = temp;
+        start++;
+        i--;
+    }
+}
+
+int findMax(int arr[], int n)
+{
+int mi, i;
+for (mi = 0, i = 0; i < n; ++i)
+    if (arr[i] > arr[mi])
+            mi = i;
+return mi;
+}
+void pancakeSort(int *arr, int n)
+{
+    for (int curr_size = n; curr_size > 1;
+                               --curr_size)
+    {
+
+        int mi = findMax(arr, curr_size);
+        if (mi != curr_size-1)
+        {
+
+            flip(arr, mi);
+            flip(arr, curr_size-1);
+        }
+    }
+}
 
 int main()
 {
     Quadratic <string, int> quad_hash(10, string("empty"), myHash);
     vector<string> ciudades;
     vector<int> vectorid;
+    ifstream archivo(NOMBRE_CIU);
+    string linea;
+    int e = 0;
+    getline(archivo, linea);
     cout<<"TEC Waze"<<endl;
     cout<<"Encuentra la ruta más cercana entre localizaciones."<<endl;
-    cout<<endl<<"Id de ciudad: "<<endl;
-    ciudades.push_back("Cuernavaca");
-    ciudades.push_back("Ciudad de México");
-    ciudades.push_back("Puebla");
-    ciudades.push_back("Toluca");
-    ciudades.push_back("Querétaro");
-    ciudades.push_back("Uruapan");
-    ciudades.push_back("Morelia");
-    ciudades.push_back("Irapuato");
-    int i=0;
     
-    while(i<8){
-    quad_hash.put(string(ciudades[i]), i);
-    i++;
+    while(getline(archivo, linea)){
+    ciudades.push_back(linea);
+    quad_hash.put(string(ciudades[e]), e);
+    e++;
     }
-    cout<<quad_hash.toString().c_str();
-
+    archivo.close();
     int v = 8;
 
     vector<int> adj[v];
@@ -132,17 +164,59 @@ int main()
     add_edge(adj, 4, 7);
     add_edge(adj, 5, 6);
     add_edge(adj, 6, 7);
+
+    int decision=0;
+    
+    cout<<"¿Qué desea hacer hoy?: "<<endl;
+    cout<<"1. Despliega lista completa de ciudades."<<endl;
+    cout<<"2. Encontrar ruta más cercana entre dos ciudades por id."<<endl;
+    cout<<"3. Ver lista de líneas de autobuses disponibles para servicio."<<endl;
+    cout<<"4. Eliminar historial de búsqueda de rutas. "<<endl;
+    cin>>decision;
+    
+    while((decision<=0)||(decision>4)){
+    cout<<endl<<"Digite un número correcto."<<endl;
+    cout<<"¿Qué desea hacer hoy?: "<<endl;
+    cout<<"1. Despliega lista completa de ciudades."<<endl;
+    cout<<"2. Encontrar ruta más cercana entre dos ciudades por id."<<endl;
+    cout<<"3. Ver lista de líneas de autobuses disponibles para servicio."<<endl;
+    cout<<"4. Eliminar historial de búsqueda de rutas."<<endl;
+    cin>>decision;
+    }
+    
+    if(decision==1){
+      cout<<"------------------------------------------------"<<endl;
+      cout<<"ID: Ciudad"<<endl;
+      cout<<quad_hash.toString().c_str();
+    }
+
+    else if(decision==2){
+    ofstream myfile("historial.txt", ios::app);
     cout<<"¿Cuál es el id de la ciudad de inicio?: "<<endl;
     cin>>inicio;
     cout<<"¿Cuál es id de la la ciudad de destino?: "<<endl;
     cin>>dest;
+    while((inicio>=8)||(inicio<0)||(dest>=8)||(dest<0)){
+    cout<<endl<<"Digite ids dentro del rango existente."<<endl;
+    cout<<"¿Cuál es el id de la ciudad de inicio?: "<<endl;
+    cin>>inicio;
+    cout<<"¿Cuál es id de la la ciudad de destino?: "<<endl;
+    cin>>dest;
+    }
+
+    string iniciotxt, destxt;
+    iniciotxt=to_string(inicio);
+    destxt=to_string(dest);
+    myfile<<"Del ID "<<iniciotxt<<" al "<<destxt<<": ";
     int ii=0;
+    int i=0;
     vectorid=printShortestDistance(adj, inicio, dest, v);
     while(ii<vectorid.size()){
       i=0;
       while(i<8){
         if(quad_hash.get(ciudades[i])==vectorid[ii]){
           cout<<ciudades[i];
+          myfile<<ciudades[i]; 
         }
         i++;
       }
@@ -150,9 +224,53 @@ int main()
       ii++;
       if(ii<vectorid.size()){
         cout<<"->";
+        myfile<<"->";
       }
     }
+    myfile<<endl;
+    myfile.close();
     cout<<endl<<endl;
+    }
+
+    else if(decision==3){
+    int arr[] = {1542, 9574, 3274, 6784, 1032};
+    int n = sizeof(arr)/sizeof(arr[0]);
+ 
+      pancakeSort(arr, n);
+      cout<<"------------------------------------------------"<<endl;
+      cout << "Desglose de líneas terrestres."<<endl;
+    for (int i = 0; i < n; i++){
+        cout << arr[i] << ": ";
+        if(arr[i]==1542){
+          cout << "Primera Plus."<<endl;
+        }
+        else if(arr[i]==9574){
+          cout << "ETN."<<endl;
+        }
+        else if(arr[i]==3274){
+          cout << "Omnibus de México."<<endl;
+        }
+        else if(arr[i]==6784){
+          cout << "Estrella Roja."<<endl;
+        }
+        else if(arr[i]==1032){
+          cout << "Turistar."<<endl;
+        }
+        else{
+          cout << "ID de Línea de autobús no registrado"<<endl;
+        }
+    }
+
+    }
+
+    else if(decision==4){
+    std::ofstream ofs;
+    ofs.open("historial.txt", std::ofstream::out | std::ofstream::trunc);
+    ofs<<"Historial de Búsqueda entre Ciudades:"<<endl;
+    ofs.close();
+    cout<<"------------------------------------------------"<<endl;
+    cout<<"Historial correctamente eliminado." <<endl; 
+    }
     cout<<"------------------------------------------------"<<endl;
     main();
     return 0;

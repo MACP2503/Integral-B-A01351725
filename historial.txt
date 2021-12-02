@@ -1,0 +1,6 @@
+Historial de Búsqueda entre Ciudades:
+Del ID 5 al 4: Morelia->Uruapan
+Del ID 7 al 5: Leon->Uruapan->Morelia
+Del ID 0 al 4: Ciudad de Mexico->Queretaro->Uruapan
+Del ID 0 al 7: Ciudad de Mexico->Queretaro->Leon
+Del ID 3 al 4: Queretaro->Uruapan
