@@ -11,7 +11,6 @@ using namespace std;
 #include <stack>
 #include <list>
 #include <algorithm>
-#include "sorts.h"
 #define NOMBRE_CIU "Ciudades.txt"
 
 void add_edge(vector<int> adj[], int src, int dest)
