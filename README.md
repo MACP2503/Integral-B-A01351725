@@ -41,7 +41,8 @@ A pesar de tener la explicación ya realizada en puntos anteriores, se muestra a
 #### Inserciones
 La inserción principal coloca los valores de ciudades.txt dentro de la estructura heap por medio del getline. Si se tienen las ciudades en fila, cada una se posiciona en la estructura según el valor de la iteración e. Si Ciudad de México es la primera y Puebla la segunda se colocan en ciudades[0] con id 0 y ciudades[1] con id 1 respectivamente. Esta misma actividad se efectúa en el grafo, que toma el id y la ciudad del heap para hacer futuras operaciones.
 #### Ordenamiento
-Se generaron los flips del pancake sort que ya fue previamente explicado, encontrando un posicionamiento del menor al mayor en poco tiempo. Su funcionamiento es fácilmente observable con un plato, se inserta la espátula como en la imagen para cada vez obtener volteos más uniformes en la escala de tamaños. ![image](https://user-images.githubusercontent.com/74038341/144356205-8f90685c-419a-4503-bc18-e155306fc2c7.png)
+Se generaron los flips del pancake sort que ya fue previamente explicado, encontrando un posicionamiento del menor al mayor en poco tiempo. Su funcionamiento es fácilmente observable con un plato, se inserta la espátula como en la imagen para cada vez obtener volteos más uniformes en la escala de tamaños. 
+![image](https://user-images.githubusercontent.com/74038341/144356205-8f90685c-419a-4503-bc18-e155306fc2c7.png)
 #### Borrado
 #### Lectura
 
